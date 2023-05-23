@@ -54,7 +54,7 @@ public class IVCheckPanel extends JPanel{
 				pkmIconLabel.setIcon(new PokemonIcon(pkm.getID()));
 			}
 		});
-		this.cmbPokemon.setSelectedItem(ComboBoxUtil.getComboBoxItem(this.cmbPokemon, 1));
+		this.cmbPokemon.setSelectedItem(ComboBoxUtil.getComboBoxItem(this.cmbPokemon, 7));	// initialize to squirtle
 		
 		this.txtHP = new IntegerJTextField(2);
 		this.txtAtk = new IntegerJTextField[3];
@@ -142,6 +142,16 @@ public class IVCheckPanel extends JPanel{
 			}
 			
 		}, BorderLayout.NORTH);
+
+		// Hard code IV values and frames
+		txtAtk[0].setText("21");
+		txtAtk[1].setText("4");
+		txtDef[0].setText("16");
+		txtSpa[2].setText("30");
+		txtSpe[1].setText("24");
+
+		this.txtMinFrame.setText("4050");
+		this.txtMaxFrame.setText("5900");
 
 
 		this.add(new JPanel(){

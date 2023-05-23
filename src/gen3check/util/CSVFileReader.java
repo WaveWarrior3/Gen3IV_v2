@@ -21,6 +21,7 @@ public class CSVFileReader {
 	 * @return
 	 */
 	public String[] getLine(int n, String path){
+		//System.out.println(path);
 		InputStream fis = getClass().getResourceAsStream("/database/" + path);
 		BufferedReader br = new BufferedReader(new InputStreamReader(fis));
 		
