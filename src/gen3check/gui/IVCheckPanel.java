@@ -150,7 +150,7 @@ public class IVCheckPanel extends JPanel{
 		txtSpa[2].setText("30");
 		txtSpe[1].setText("24");
 
-		this.txtMinFrame.setText("4050");
+		this.txtMinFrame.setText("4010");
 		this.txtMaxFrame.setText("5900");
 
 
