@@ -54,4 +54,8 @@ public class MainWindow extends JFrame {
 	    }
 	    super.processWindowEvent(e);
 	}
+
+	public IVCheckPanel getIVCheckPanel() {
+		return this.ivcheckpanel;
+	}
 }

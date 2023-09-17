@@ -13,6 +13,7 @@ import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -150,7 +151,7 @@ public class IVCheckPanel extends JPanel{
 		txtSpa[2].setText("30");
 		txtSpe[1].setText("24");
 
-		this.txtMinFrame.setText("4010");
+		this.txtMinFrame.setText("4000");
 		this.txtMaxFrame.setText("5900");
 
 
@@ -279,6 +280,34 @@ public class IVCheckPanel extends JPanel{
 	 */
 	public void saveData() {
 		return;
+	}
+
+	public String[] getVals() {
+		String vals[] = new String[43];
+
+		// Get IVs
+		vals[0] = this.txtHP.getText();
+		for (int i = 0; i < 3; i++) vals[1+i] = this.txtAtk[i].getText();
+		for (int i = 0; i < 3; i++) vals[4+i] = this.txtDef[i].getText();
+		for (int i = 0; i < 3; i++) vals[7+i] = this.txtSpa[i].getText();
+		for (int i = 0; i < 3; i++) vals[10+i] = this.txtSpd[i].getText();
+		for (int i = 0; i < 3; i++) vals[13+i] = this.txtSpd[i].getText();
+
+		// Get Frames
+		vals[16] = this.txtMinFrame.getText();
+		vals[17] = this.txtMaxFrame.getText();
+
+
+		// Get Natures
+		JCheckBox natures[] = this.rp.getNatures();
+		for (int i = 0; i < 25; i++) {
+			if (natures[i].isSelected()) vals[18+i] = "1";
+			else vals[18+i] = "0";
+		}
+
+		// Check for empty string
+		for (int i = 0; i < 43; i++) if (vals[i].length() == 0) vals[i] = "0";
+		return vals;
 	}
 	
 	private MainWindow mw;
