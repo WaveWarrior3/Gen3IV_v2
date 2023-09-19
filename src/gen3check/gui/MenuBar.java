@@ -31,6 +31,27 @@ public class MenuBar extends JMenuBar{
 			}			
 		});
 		menu.add(openMenuItem);
+
+
+		final JMenuItem saveButton = new JMenuItem("Save Data");
+		saveButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Save Button Pressed");
+			}	
+		});
+		menu.add(saveButton);
+
+		final JMenuItem loadButton = new JMenuItem("Load Data");
+		loadButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Load Button Pressed");
+			}	
+		});
+		menu.add(loadButton);
+
+
 		
 		final JMenuItem exitMenuItem = new JMenuItem("Exit");
 		exitMenuItem.addActionListener(new ActionListener(){
@@ -40,6 +61,8 @@ public class MenuBar extends JMenuBar{
 			}			
 		});
 		menu.add(exitMenuItem);
+
+		
 		
 		this.add(menu);
 		

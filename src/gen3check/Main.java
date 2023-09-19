@@ -2,6 +2,7 @@ package gen3check;
 
 import gen3check.gui.MainWindow;
 
+import javax.swing.JFileChooser;
 import javax.swing.UIManager;
 
 import gen3check.util.DataListUtil;
@@ -23,6 +24,11 @@ public class Main {
 		MainWindow MW = new MainWindow(controller);
 
 
+		//JFileChooser fc = new JFileChooser();
+		//if (fc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+		//	String file_tmp = fc.getSelectedFile().getAbsolutePath();
+		//	System.out.println(file_tmp);
+		//}
 
 		// Read data from file
 		try {
@@ -30,7 +36,7 @@ public class Main {
 			Scanner myReader = new Scanner(fp);
 			while (myReader.hasNextLine()) {
 				String data = myReader.nextLine();
-				System.out.println(data);
+				//System.out.println(data);
 			}
 			myReader.close();
 		}
