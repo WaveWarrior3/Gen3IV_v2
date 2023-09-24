@@ -49,7 +49,7 @@ public class MainWindow extends JFrame {
 	@Override
 	protected void processWindowEvent(WindowEvent e) {
 	    if(e.getID() == WindowEvent.WINDOW_CLOSING){
-	        ivcheckpanel.saveData();
+	        //ivcheckpanel.saveData();
 	        System.out.println("Window is closing");
 	    }
 	    super.processWindowEvent(e);

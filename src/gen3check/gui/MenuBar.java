@@ -37,8 +37,14 @@ public class MenuBar extends JMenuBar{
 		saveButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				JFileChooser fc = new JFileChooser();
+				String filename = "";
+				if (fc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+					filename = fc.getSelectedFile().getAbsolutePath();
+				}
+
 				System.out.println("Save Button Pressed");
-				mw.getIVCheckPanel().saveData();
+				mw.getIVCheckPanel().saveData(filename);
 			}	
 		});
 		menu.add(saveButton);
@@ -47,8 +53,14 @@ public class MenuBar extends JMenuBar{
 		loadButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				JFileChooser fc = new JFileChooser();
+				String filename = "";
+				if (fc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+					filename = fc.getSelectedFile().getAbsolutePath();
+				}
+
 				System.out.println("Load Button Pressed");
-				mw.getIVCheckPanel().loadData();
+				mw.getIVCheckPanel().loadData(filename);
 			}	
 		});
 		menu.add(loadButton);

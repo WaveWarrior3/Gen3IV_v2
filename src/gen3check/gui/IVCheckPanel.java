@@ -277,11 +277,11 @@ public class IVCheckPanel extends JPanel{
 
 
 
-	public void saveData() {
+	public void saveData(String filename) {
 		String[] vals = getVals();
 		try {
 			//File fp = new File("/home/jacob/git/Gen3IV_v2/filename.txt");
-			FileWriter myWriter = new FileWriter("/home/jacob/git/Gen3IV_v2/Button_Save.txt");
+			FileWriter myWriter = new FileWriter(filename);
 			for (int i = 0; i < 43; i++) myWriter.write(vals[i] + "\n");
 			myWriter.close();
 		}
@@ -294,10 +294,10 @@ public class IVCheckPanel extends JPanel{
 		return;
 	}
 
-	public void loadData() {
+	public void loadData(String filename) {
 		String vals[] = new String[43];
 		try {
-			File fp = new File("/home/jacob/git/Gen3IV_v2/Button_Save.txt");
+			File fp = new File(filename);
 			Scanner myReader = new Scanner(fp);
 			int i = 0;
 			while (myReader.hasNextLine()) {
