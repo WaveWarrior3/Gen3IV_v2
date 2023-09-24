@@ -52,6 +52,11 @@ public class RestPanel extends JPanel{
 	public JCheckBox[] getNatures(){
 		return chkNature;
 	}
+
+	public void setNature(int nature_idx, int nature_val) {
+		if (nature_val == 0) this.chkNature[nature_idx].setSelected(false);
+		else this.chkNature[nature_idx].setSelected(true);
+	}
 	
 	public void updateSelectedPokemon(Pokemon pokemon, int frame){
 		this.selectedPokemon = pokemon;

@@ -8,6 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -270,16 +274,59 @@ public class IVCheckPanel extends JPanel{
 	public JButton getSearchButton() {
 		return searchButton;
 	}
-	
-	/* saveData()
-	 * 
-	 * Save filter data to set file.
-	 * 
-	 * TODO: IV Data, Species Data, Frame Data, Nature Data
-	 * 
-	 */
+
+
+
 	public void saveData() {
+		String[] vals = getVals();
+		try {
+			//File fp = new File("/home/jacob/git/Gen3IV_v2/filename.txt");
+			FileWriter myWriter = new FileWriter("/home/jacob/git/Gen3IV_v2/Button_Save.txt");
+			for (int i = 0; i < 43; i++) myWriter.write(vals[i] + "\n");
+			myWriter.close();
+		}
+		catch (IOException e) {
+			System.out.println("An Error Occured");
+			e.printStackTrace();
+		}
+
+
 		return;
+	}
+
+	public void loadData() {
+		String vals[] = new String[43];
+		try {
+			File fp = new File("/home/jacob/git/Gen3IV_v2/Button_Save.txt");
+			Scanner myReader = new Scanner(fp);
+			int i = 0;
+			while (myReader.hasNextLine()) {
+				String data = myReader.nextLine();
+				vals[i] = data;
+				i++;
+			}
+			myReader.close();
+		}
+		catch (IOException e) {
+			System.out.println("An Error Occured");
+			e.printStackTrace();
+		}
+
+
+		this.txtHP.setText(vals[0]);
+		for (int i = 0; i < 3; i++) this.txtAtk[i].setText(vals[1+i]);
+		for (int i = 0; i < 3; i++) this.txtDef[i].setText(vals[4+i]);
+		for (int i = 0; i < 3; i++) this.txtSpa[i].setText(vals[7+i]);
+		for (int i = 0; i < 3; i++) this.txtSpd[i].setText(vals[10+i]);
+		for (int i = 0; i < 3; i++) this.txtSpe[i].setText(vals[13+i]);
+
+		this.txtMinFrame.setText(vals[16]);
+		this.txtMaxFrame.setText(vals[17]);
+
+		for (int i = 0; i < 25; i++) this.rp.setNature(i, Integer.parseInt(vals[18+i]));
+
+
+
 	}
 
 	public String[] getVals() {
@@ -291,7 +338,7 @@ public class IVCheckPanel extends JPanel{
 		for (int i = 0; i < 3; i++) vals[4+i] = this.txtDef[i].getText();
 		for (int i = 0; i < 3; i++) vals[7+i] = this.txtSpa[i].getText();
 		for (int i = 0; i < 3; i++) vals[10+i] = this.txtSpd[i].getText();
-		for (int i = 0; i < 3; i++) vals[13+i] = this.txtSpd[i].getText();
+		for (int i = 0; i < 3; i++) vals[13+i] = this.txtSpe[i].getText();
 
 		// Get Frames
 		vals[16] = this.txtMinFrame.getText();

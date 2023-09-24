@@ -38,6 +38,7 @@ public class MenuBar extends JMenuBar{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Save Button Pressed");
+				mw.getIVCheckPanel().saveData();
 			}	
 		});
 		menu.add(saveButton);
@@ -47,6 +48,7 @@ public class MenuBar extends JMenuBar{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Load Button Pressed");
+				mw.getIVCheckPanel().loadData();
 			}	
 		});
 		menu.add(loadButton);
