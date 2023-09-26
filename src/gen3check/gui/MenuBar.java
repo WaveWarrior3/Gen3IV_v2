@@ -41,6 +41,7 @@ public class MenuBar extends JMenuBar{
 				String filename = "";
 				if (fc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 					filename = fc.getSelectedFile().getAbsolutePath();
+					filename += ".txt";
 				}
 
 				System.out.println("Save Button Pressed");
