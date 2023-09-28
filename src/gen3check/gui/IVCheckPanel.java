@@ -149,6 +149,7 @@ public class IVCheckPanel extends JPanel{
 		}, BorderLayout.NORTH);
 
 		// Hard code IV values and frames
+		/*
 		txtAtk[0].setText("21");
 		txtAtk[1].setText("4");
 		txtDef[0].setText("16");
@@ -157,6 +158,7 @@ public class IVCheckPanel extends JPanel{
 
 		this.txtMinFrame.setText("4000");
 		this.txtMaxFrame.setText("5900");
+		*/
 
 
 		this.add(new JPanel(){

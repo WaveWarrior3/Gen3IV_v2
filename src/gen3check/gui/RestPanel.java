@@ -218,9 +218,9 @@ public class RestPanel extends JPanel{
 		}, BorderLayout.SOUTH);
 //		this.add
 
-		this.chkNature[15].setSelected(true);
-		this.chkNature[16].setSelected(true);
-		this.chkNature[19].setSelected(true);
+		//this.chkNature[15].setSelected(true);
+		//this.chkNature[16].setSelected(true);
+		//this.chkNature[19].setSelected(true);
 	}
 	
 	private JCheckBox[] chkNature;
